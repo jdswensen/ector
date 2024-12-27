@@ -15,8 +15,8 @@ exclude = [".github"]
 doctest = false
 
 [dependencies]
-embassy-executor = { version = "0.6", default-features = false }
-embassy-sync = { version = "0.6", default-features = false }
+embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", default-features = false }
+embassy-sync = { git = "https://github.com/embassy-rs/embassy.git", default-features = false }
 portable-atomic = { version = "1.3", default-features = false }
 
 log = { version = "0.4", optional = true }
@@ -28,12 +28,11 @@ static_cell = "2.1"
 
 
 [dev-dependencies]
-embassy-executor = { version = "0.6.0", default-features = false, features = [
-    "integrated-timers",
+embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", default-features = false, features = [
     "arch-std",
     "executor-thread",
 ] }
-embassy-time = { version = "0.3.2", default-features = false, features = [
+embassy-time = { git = "https://github.com/embassy-rs/embassy.git", default-features = false, features = [
     "std",
 ] }
 futures = { version = "0.3.31", default-features = false, features = [
@@ -45,7 +44,6 @@ ector = { path = ".", features = ["std", "log", "time", "test-utils"] }
 [features]
 default = ["std", "log", "time"]
 std = [
-    "embassy-executor/integrated-timers",
     "embassy-executor/arch-std",
     "embassy-time/std",
     "critical-section/std",
